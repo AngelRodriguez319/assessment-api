@@ -1,0 +1,23 @@
+{
+  "api": {
+    "include": {
+      "*": "*"
+    }
+  },
+  "extend": {
+    "models": [],
+    "routes": [
+      "process"
+    ],
+    "schema_types": [],
+    "serializers": []
+  },
+  "graphql": {
+    "include": {
+      "*": "*"
+    }
+  },
+  "platform": "django",
+  "project_description": "This repository holds the source code of Assessment A7",
+  "project_name": "Assessment A7"
+}
