@@ -28,6 +28,9 @@ class TestDomain(APITestCase):
         output_6 = create_process(41, 5, 1)
         self.assertEqual(output_6, 2638)
 
+        output_7 = create_process(-100, 0, 1)
+        self.assertEqual(output_7, None)
+
     def test_seed_serie(self):
         output_1 = seed_serie(7, 2)
         self.assertEqual(output_1, 105)

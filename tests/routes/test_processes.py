@@ -48,3 +48,7 @@ class TestProcesses(APITestCase):
         input_7 = {"N": 41, "K": 5, "user_id": "Admin"}
         response_7 = self.client.get('/api/processes/execute/', input_7)
         self.assertEqual(response_7.status_code, status.HTTP_400_BAD_REQUEST)
+
+        input_8 = {"N": -1, "K": 5, "user_id": 1}
+        response_8 = self.client.get('/api/processes/execute/', input_8)
+        self.assertEqual(response_7.status_code, status.HTTP_400_BAD_REQUEST)

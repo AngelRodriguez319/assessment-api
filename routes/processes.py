@@ -27,7 +27,11 @@ class ProcessViewSet(SeedRoute.ProcessViewSet):
             k = int(data["K"])
             user_id = int(data["user_id"])
         except ValueError:
-            return Response(status=status.HTTP_400_BAD_REQUEST)
+            return Response(status=status.HTTP_400_BAD_REQUEST, data={"detail": "Value Error."})
 
         result = create_process(n, k, user_id)
-        return Response(status=status.HTTP_201_CREATED, data=result)
+
+        if result is None:
+            return Response(status=status.HTTP_400_BAD_REQUEST, data={"detail": "Value Error."})
+        else:
+            return Response(status=status.HTTP_201_CREATED, data=result)
